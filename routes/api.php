@@ -1,6 +1,16 @@
 <?php
+$env = env('APP_ENV', 'dev');
+if($env === 'dev') {
+    $allowed_env = 'http://localhost:8075';
+} else {
+    $allowed_env = 'http://wedding.thomaskbird.com';
+}
+
+header('Access-Control-Allow-Origin: '. $allowed_env);
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, User-Agent, authorization");
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +22,17 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+// Credential routes
+route::post('login', ['as' => 'action_login', 'uses' => 'CredentialController@action_login']);
+route::post('signup', ['as' => 'action_signup', 'uses' => 'CredentialController@action_signup']);
+route::post('activate/{activation_code}', ['as' => 'account_user_activate', 'uses' => 'CredentialController@account_user_activate']);
+route::post('forgot-password', ['as' => 'action_forgot_password', 'uses' => 'CredentialController@action_forgot_password']);
+route::post('reset-password/{reset_token}', ['as' => 'action_reset_password', 'uses' => 'CredentialController@action_reset_password']);
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+/**
+ * Protected routes
+ * These routes utilize the apiToken middleware for authorization
+ */
+route::middleware(['apiToken'])->group(function() {
+
 });

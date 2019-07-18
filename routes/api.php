@@ -29,7 +29,7 @@ route::post('activate/{activation_code}', ['as' => 'account_user_activate', 'use
 route::post('forgot-password', ['as' => 'action_forgot_password', 'uses' => 'CredentialController@action_forgot_password']);
 route::post('reset-password/{reset_token}', ['as' => 'action_reset_password', 'uses' => 'CredentialController@action_reset_password']);
 
-route::post('page/{slug}', ['as' => 'page_data', 'uses' => 'PageController@page_data']);
+route::get('page/{slug}', ['as' => 'page_data', 'uses' => 'PageController@page_data']);
 
 /**
  * Protected routes

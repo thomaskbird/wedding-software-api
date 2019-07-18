@@ -6,7 +6,7 @@ class PageController extends Controller {
 
     public function page_data($slug) {
         if($slug === 'home') {
-            $bride_groom = User::whereRaw('type_id = ? OR type_id = ?', [1,2])->get();
+            $bride_groom = User::whereRaw('type_id = ? OR type_id = ?', [1,2])->orderBy('type_id', 'ASC')->get();
             $bridal_party = User::whereRaw('type_id = ? OR type_id = ?', [4,5])->orderBy('bridal_party_order', 'ASC')->get();
 
             return response(json_encode([

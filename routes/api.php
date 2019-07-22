@@ -3,7 +3,7 @@ $env = env('APP_ENV', 'dev');
 if($env === 'dev') {
     $allowed_env = 'http://localhost:8075';
 } else {
-    $allowed_env = 'http://wedding.thomaskbird.com';
+    $allowed_env = 'http://graceandtom.com';
 }
 
 header('Access-Control-Allow-Origin: '. $allowed_env);

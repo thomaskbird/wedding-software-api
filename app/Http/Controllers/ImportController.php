@@ -8,7 +8,7 @@ class ImportController extends Controller {
 
         $created_users = [];
 
-        $file = fopen('guest-list.csv', 'r');
+        $file = fopen(app_path('Http/imports/guest-list.csv'), 'r');
 
         if($file === false) {
             throw new Exception('There was an error while trying to load csv');

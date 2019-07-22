@@ -31,6 +31,8 @@ route::post('reset-password/{reset_token}', ['as' => 'action_reset_password', 'u
 
 route::get('page/{slug}', ['as' => 'page_data', 'uses' => 'PageController@page_data']);
 
+route::post('rsvp-respond', ['as' => 'rsvp_respond', 'uses' => 'RsvpController@rsvp_respond']);
+
 /**
  * Protected routes
  * These routes utilize the apiToken middleware for authorization

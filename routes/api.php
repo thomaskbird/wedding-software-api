@@ -34,6 +34,7 @@ route::get('page/{slug}', ['as' => 'page_data', 'uses' => 'PageController@page_d
 route::post('rsvp-respond', ['as' => 'rsvp_respond', 'uses' => 'RsvpController@rsvp_respond']);
 
 route::get('csv-import', ['as' => 'csv_import', 'uses' => 'ImportController@csv_import']);
+route::get('convert-phones', ['as' => 'convert_phones', 'uses' => 'ImportController@convert_phones']);
 
 route::get('guest-list', ['as' => 'guest_list', 'uses' => 'UserController@guest_list']);
 /**

@@ -36,4 +36,15 @@ class ImportController extends Controller {
 
         return response(json_encode($created_users));
     }
+
+    public function convert_phones() {
+        $users = User::all();
+
+        foreach($users as $user) {
+            $user->phone = preg_replace('/[^0-9]/', '', $user->phone);
+            $user->save();
+        }
+
+        return response(json_encode($users->toArray()));
+    }
 }

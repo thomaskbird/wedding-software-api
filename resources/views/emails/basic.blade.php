@@ -1,3 +1,5 @@
+<?php echo $name; exit;?>
+
 <h2>Hi,</h2>
 
 <p>You received a new message from the website:</p>

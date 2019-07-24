@@ -5,22 +5,22 @@
 <table>
     <tr>
         <td>Name:</td>
-        <td>{{ $input['name'] }}</td>
+        <td>{{ $name }}</td>
     </tr>
     <tr>
         <td>Phone:</td>
-        <td>{{ $input['phone'] }}</td>
+        <td>{{ $phone }}</td>
     </tr>
     <tr>
         <td>Email:</td>
-        <td>{{ $input['email'] }}</td>
+        <td>{{ $email }}</td>
     </tr>
     <tr>
         <td>Subject:</td>
-        <td>{{ $input['subject'] }}</td>
+        <td>{{ $subject }}</td>
     </tr>
     <tr>
         <td>Message:</td>
-        <td>{{ $input['message'] }}</td>
+        <td>{{ $message }}</td>
     </tr>
 </table>

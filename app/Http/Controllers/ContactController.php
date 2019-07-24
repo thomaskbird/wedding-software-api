@@ -27,7 +27,10 @@ class ContactController extends Controller {
                 $message->to('TomAndGrace1212@gmail.com')->subject('New Message From Website');
             });
 
-            return response(json_encode($sent));
+            return response(json_encode([
+                'status' => true,
+                'payload' => $sent
+            ]));
         }
     }
 }

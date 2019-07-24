@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 
+use Mail;
 use Validator;
 
 class ContactController extends Controller {

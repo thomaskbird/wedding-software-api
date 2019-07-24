@@ -1,5 +1,3 @@
-<?php echo $name; exit;?>
-
 <h2>Hi,</h2>
 
 <p>You received a new message from the website:</p>
@@ -7,7 +5,7 @@
 <table>
     <tr>
         <td>Name:</td>
-        <td></td>
+        <td>{{ $name }}</td>
     </tr>
     <tr>
         <td>Phone:</td>

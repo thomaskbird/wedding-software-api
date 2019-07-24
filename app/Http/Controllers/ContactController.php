@@ -15,6 +15,8 @@ class ContactController extends Controller {
             'message' => 'required'
         ]);
 
+        print_r($input);exit;
+
         if($validator->fails()) {
             return response(json_encode([
                 'status' => false,

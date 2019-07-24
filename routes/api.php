@@ -36,6 +36,8 @@ route::post('rsvp-respond', ['as' => 'rsvp_respond', 'uses' => 'RsvpController@r
 route::get('csv-import', ['as' => 'csv_import', 'uses' => 'ImportController@csv_import']);
 route::get('convert-phones', ['as' => 'convert_phones', 'uses' => 'ImportController@convert_phones']);
 
+route::post('contact', ['as' => 'contact', 'uses' => 'ContactController@contact']);
+
 route::get('guest-list', ['as' => 'guest_list', 'uses' => 'UserController@guest_list']);
 /**
  * Protected routes

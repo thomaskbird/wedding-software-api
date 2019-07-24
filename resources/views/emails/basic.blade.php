@@ -17,10 +17,10 @@
     </tr>
     <tr>
         <td>Subject:</td>
-        <td>{{ $subject }}</td>
+        <td>{{ $sub }}</td>
     </tr>
     <tr>
         <td>Message:</td>
-        <td>{{ $message }}</td>
+        <td>{{ $msg }}</td>
     </tr>
 </table>

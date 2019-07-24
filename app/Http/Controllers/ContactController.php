@@ -12,7 +12,7 @@ class ContactController extends Controller {
         $validator = Validator::make($input, [
             'name' => 'required',
             'phone' => 'required',
-            'message' => 'required'
+            'msg' => 'required'
         ]);
 
         if($validator->fails()) {

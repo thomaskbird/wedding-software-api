@@ -28,8 +28,7 @@ class ContactController extends Controller {
             });
 
             return response(json_encode([
-                'status' => true,
-                'payload' => $sent
+                'status' => true
             ]));
         }
     }

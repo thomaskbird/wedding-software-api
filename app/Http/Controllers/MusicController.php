@@ -9,9 +9,8 @@ class MusicController extends Controller {
         $input = $request->all();
 
         $validator = Validator::make($input, [
-            'name' => 'required',
-            'phone' => 'required',
-            'msg' => 'required'
+            'artist' => 'required',
+            'song' => 'required'
         ]);
 
         if($validator->fails()) {

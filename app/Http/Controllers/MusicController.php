@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Http\Models\Song;
+
 use Illuminate\Http\Request;
 
 use Validator;

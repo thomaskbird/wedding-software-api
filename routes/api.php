@@ -37,6 +37,7 @@ route::get('csv-import', ['as' => 'csv_import', 'uses' => 'ImportController@csv_
 route::get('convert-phones', ['as' => 'convert_phones', 'uses' => 'ImportController@convert_phones']);
 
 route::post('contact', ['as' => 'contact', 'uses' => 'ContactController@contact']);
+route::post('song-request', ['as' => 'song_request', 'uses' => 'MusicController@song_request']);
 
 route::get('guest-list', ['as' => 'guest_list', 'uses' => 'UserController@guest_list']);
 /**

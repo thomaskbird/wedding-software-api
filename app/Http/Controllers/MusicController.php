@@ -25,7 +25,10 @@ class MusicController extends Controller {
 
             return response(json_encode([
                 'status' => true,
-                'data' => ['Song requested successfully']
+                'data' => [
+                    'msg' => ['Song requested successfully'],
+                    'song' => $song
+                ]
             ]));
         }
     }

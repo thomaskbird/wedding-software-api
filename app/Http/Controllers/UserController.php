@@ -30,7 +30,6 @@ class UserController extends Controller {
             $user = User::find($input['userId']);
 
             $key = $input['key'];
-            $user->$key = $input['val'];
 
             if($key === 'rsvp') {
                 if($input['val'] === 'yes') {
@@ -38,6 +37,8 @@ class UserController extends Controller {
                 } else {
                     $user->rsvp_at = null;
                 }
+            } else {
+                $user->$key = $input['val'];
             }
 
             $user->save();

@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Models\User;
+use Illuminate\Http\Request;
 
 class UserController extends Controller {
     public function guest_list() {
@@ -8,5 +9,36 @@ class UserController extends Controller {
         return response(json_encode([
             'guests' => $users->toArray()
         ]));
+    }
+
+    public function admin_toggle_rsvp(Request $request) {
+        $input = $request->all();
+
+        $validator = Validator::make($input, [
+            'userId' => 'required',
+            'key' => 'required',
+            'val' => 'required'
+        ]);
+
+        if($validator->fails()) {
+            return response(json_encode([
+                'status' => false,
+                'errors' => $validator->errors()
+            ]), 401);
+        } else {
+            $user = User::find($input['userId']);
+
+            $user->$input['key'] = $input['val'];
+
+            $user->save();
+
+            return response(json_encode([
+                'status' => true,
+                'data' => [
+                    'msg' => ['Successfully updated user record '. $input['key']],
+                    'user' => $user
+                ]
+            ]));
+        }
     }
 }

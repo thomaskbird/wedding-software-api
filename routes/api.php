@@ -40,6 +40,7 @@ route::post('contact', ['as' => 'contact', 'uses' => 'ContactController@contact'
 route::post('song-request', ['as' => 'song_request', 'uses' => 'MusicController@song_request']);
 
 route::get('guest-list', ['as' => 'guest_list', 'uses' => 'UserController@guest_list']);
+route::post('admin-toggle-rsvp', ['as' => 'admin_toggle_rsvp', 'uses' => 'UserController@admin_toggle_rsvp']);
 /**
  * Protected routes
  * These routes utilize the apiToken middleware for authorization

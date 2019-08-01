@@ -18,8 +18,7 @@ class UserController extends Controller {
 
         $validator = Validator::make($input, [
             'userId' => 'required',
-            'key' => 'required',
-            'val' => 'required'
+            'key' => 'required'
         ]);
 
         if($validator->fails()) {

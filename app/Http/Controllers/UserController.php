@@ -32,6 +32,14 @@ class UserController extends Controller {
             $key = $input['key'];
             $user->$key = $input['val'];
 
+            if($key === 'rsvp') {
+                if($input['val'] === 'yes') {
+                    $user->rsvp_at = date('Y-m-d H:i:s');
+                } else {
+                    $user->rsvp_at = null;
+                }
+            }
+
             $user->save();
 
             return response(json_encode([

@@ -3,6 +3,8 @@
 use App\Http\Models\User;
 use Illuminate\Http\Request;
 
+use Validator;
+
 class UserController extends Controller {
     public function guest_list() {
         $users = User::all();

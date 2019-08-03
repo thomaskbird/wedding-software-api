@@ -38,6 +38,8 @@ class UserController extends Controller {
                 } else {
                     $user->rsvp_at = null;
                 }
+
+                $user->rsvp_source = 'personal';
             }
 
             $user->save();

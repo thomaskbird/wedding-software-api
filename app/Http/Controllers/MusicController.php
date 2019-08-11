@@ -34,7 +34,7 @@ class MusicController extends Controller {
     }
 
     public function music_requested() {
-        $music = Song::all()->orderBy('created_at', 'desc');
+        $music = Song::all();
         return response(json_encode([
             'status' => true,
             'data' => [

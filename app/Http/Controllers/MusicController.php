@@ -44,6 +44,7 @@ class MusicController extends Controller {
     }
 
     public function toggle_song_approval($song_id, $val) {
+        $val = is_string($val) && $val === 'null' ? null : $val;
         $song = Song::find($song_id);
         $song->approved = $val;
 

@@ -32,4 +32,14 @@ class MusicController extends Controller {
             ]));
         }
     }
+
+    public function music_requested() {
+        $music = Song::orderBy('created_at', 'desc')->all();
+        return response(json_encode([
+            'status' => true,
+            'data' => [
+                'songs' => $music
+            ]
+        ]));
+    }
 }

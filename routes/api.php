@@ -41,6 +41,7 @@ route::post('song-request', ['as' => 'song_request', 'uses' => 'MusicController@
 
 route::get('guest-list', ['as' => 'guest_list', 'uses' => 'UserController@guest_list']);
 route::post('admin-toggle-rsvp', ['as' => 'admin_toggle_rsvp', 'uses' => 'UserController@admin_toggle_rsvp']);
+route::get('music-requested', ['as' => 'music_requested', 'uses' => 'MusicController@music_requested']);
 /**
  * Protected routes
  * These routes utilize the apiToken middleware for authorization

@@ -42,4 +42,24 @@ class MusicController extends Controller {
             ]
         ]));
     }
+
+    public function toggle_song_approval($song_id, $val) {
+        $song = Song::find($song_id);
+        $song->approved = $val;
+
+        if($val === 'yes') {
+            $song->approved_at = date('Y-m-d H:i:s');
+        } else {
+            $song->approved_at = null;
+        }
+
+        $song->save();
+
+        return response(json_encode([
+            'status' => true,
+            'data' => [
+                'songs' => $song
+            ]
+        ]));
+    }
 }
